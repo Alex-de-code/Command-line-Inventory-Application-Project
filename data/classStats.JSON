@@ -1,0 +1,73 @@
+[
+    {
+      "name": "Technomancer",
+      "stats": {
+        "strength": 2,
+        "agility": 3,
+        "intelligence": 5,
+        "charisma": 1,
+        "hacking": 4, 
+        "cybernetics": 3, 
+        "arcane knowledge": 4, 
+        "luck": 3 
+      },
+      "description": "Technomancers are the digital wizards of the cyber world. Masters of hacking and manipulation, they were born from underground hacking communities, their powers forged in the crucible of a collapsing internet. Armed with advanced cybernetic implants, they can control technology with a thought, making them formidable adversaries in a world ruled by data and code."
+    },
+    {
+      "name": "Cyber Brute",
+      "stats": {
+        "strength": 6,
+        "agility": 2,
+        "intelligence": 1,
+        "charisma": -2,
+        "hacking": 1, 
+        "cybernetics": 2, 
+        "arcane knowledge": -2, 
+        "luck": 2 
+      },
+      "description": "Cyber Brutes are the muscle of the dystopian cyber world. Bred and augmented for physical domination, they hail from ruthless underground fight clubs and cybernetic-enhancement labs. These hulking warriors are feared for their raw power and durability, smashing through enemies with relentless force."
+    },
+    {
+      "name": "Rogue Runner",
+      "stats": {
+        "strength": 3,
+        "agility": 4,
+        "intelligence": 3,
+        "charisma": 2,
+        "hacking": 4, 
+        "cybernetics": 2, 
+        "arcane knowledge": 1, 
+        "luck": 4 
+      },
+      "description": "Rogue Runners are the elite hackers and information brokers of the cyberpunk world. They traverse the digital underworld with unparalleled agility, charisma, and hacking skills. Equipped with cybernetic enhancements, they exploit the system for personal gain and evade the authorities with ease."
+    },
+    {
+      "name": "Cyber Ronin",
+      "stats": {
+        "strength": 5,
+        "agility": 3,
+        "intelligence": 3,
+        "charisma": -1,
+        "hacking": 2, 
+        "cybernetics": 5, 
+        "arcane knowledge": 0, 
+        "luck": 2 
+      },
+      "description": "Cyber Ronin are rogue mercenaries skilled in the art of cyber combat. Masters of cybernetics and armed with a combination of cutting-edge weapons and implants, they serve as cyber enforcers and assassins for the highest bidder. Their loyalty is to the highest bidder, making them unpredictable and deadly."
+    },
+    {
+      "name": "Neon Sleuth",
+      "stats": {
+        "strength": 2,
+        "agility": 5,
+        "intelligence": 4,
+        "charisma": 3,
+        "hacking": 3, 
+        "cybernetics": 2, 
+        "arcane knowledge": 2, 
+        "luck": 3 
+      },
+      "description": "Neon Sleuths are skilled detectives and investigators in a neon-lit cyberpunk world. They use their agility, intelligence, and charisma to navigate the bustling streets of the urban sprawl, uncovering corporate conspiracies and cybercrime. Their hacking skills and network of informants make them formidable problem solvers."
+    }
+  ]
+  
