@@ -42,7 +42,7 @@
       "description": "Rogue Runners are the elite hackers and information brokers of the cyberpunk world. They traverse the digital underworld with unparalleled agility, charisma, and hacking skills. Equipped with cybernetic enhancements, they exploit the system for personal gain and evade the authorities with ease."
     },
     {
-      "name": "Cyber Ronin",
+      "name": "Electro Ronin",
       "stats": {
         "strength": 5,
         "agility": 3,
@@ -53,7 +53,7 @@
         "arcane knowledge": 0, 
         "luck": 2 
       },
-      "description": "Cyber Ronin are rogue mercenaries skilled in the art of cyber combat. Masters of cybernetics and armed with a combination of cutting-edge weapons and implants, they serve as cyber enforcers and assassins for the highest bidder. Their loyalty is to the highest bidder, making them unpredictable and deadly."
+      "description": "Electro Ronin are rogue mercenaries skilled in the art of cyber combat. Masters of cybernetics and armed with a combination of cutting-edge weapons and implants, they serve as cyber enforcers and assassins for the highest bidder. Their loyalty is to the highest bidder, making them unpredictable and deadly."
     },
     {
       "name": "Neon Sleuth",
