@@ -2,10 +2,11 @@ import fs from 'fs';
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 
+
+
 chalkAnimation.glitch(('Opening a rift'));
 
 setTimeout(() => {
-    // Stop the 'Lorem ipsum' animation, then write on a new line.
     chalkAnimation.karaoke(`Teleporting...`);
 }, 5000);
 
