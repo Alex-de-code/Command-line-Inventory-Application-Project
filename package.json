@@ -1,0 +1,12 @@
+{
+  "name": "command-line-inventory-application-project",
+  "version": "1.0.0",
+  "description": "Exploring inventory application design through a gamified terminal experience",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["terminal", "command-line", "game"],
+  "author": "Alexander Gonzalez",
+  "license": "ISC"
+}
