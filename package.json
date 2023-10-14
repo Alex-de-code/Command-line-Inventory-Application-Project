@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "equip":"node index.js equip" 
   },
   "keywords": [
     "terminal",
@@ -16,6 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
-    "chalk-animation": "^2.0.3"
+    "chalk-animation": "^2.0.3",
+    "lodash": "^4.17.21",
+    "nanoid": "^3.3.6"
   }
 }
