@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "equip":"node index.js equip" 
+    "inventory":"node index.js inventory" 
   },
   "keywords": [
     "terminal",
