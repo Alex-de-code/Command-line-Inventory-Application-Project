@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import lodash from 'lodash'
+import  lodash  from 'lodash'; 
 // import merchantInventory from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/merchantInventory.json' assert { type: 'json'}
 import { readJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
 
@@ -9,7 +9,20 @@ const log = console.log;
 //need to update this so it subtracts from player credits
 
 function inventory(items) {
-    return items.map((item) => item.id + ' ' + item.name).join('\n');
-  }
+  return items.map((item) => item.id + ' ' + item.name).join('\n');
+}
 
-export { inventory }
+function equip(items, itemName) {
+  const foundItem = merchantInventory.find(item => item.name === itemName);
+  if (foundItem) {
+    const item = {
+      name: itemName,
+      id: nanoid(5),
+      credits: foundItem.credits
+    };
+    items.push(item);
+    return items; 
+  }  
+};
+  
+export { inventory, equip }
