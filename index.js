@@ -1,10 +1,10 @@
-import fs from 'fs';
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 //because of the use of ECMAScript Modules (ES modules) and how Node.js handles the import of JSON files, have to use assertion to specify the "type" for the imported module
 import classStats from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/classStats.json' assert { type: 'json' };
+import { readJSONFile } from './src/helpers';
 
-
+const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
 const log = console.log;
 
 
@@ -23,7 +23,7 @@ setTimeout(() => {
 //     const animal = process.argv[3];
   
 //     let writeToFile = false;
-//     let updatedAnimals = [];
+//     let updatedPlayerInventory = [];
   
 //     switch (action) {
 //       case "index":

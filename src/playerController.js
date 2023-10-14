@@ -15,3 +15,5 @@ function equip(inventory, itemName) {
     inventory.push(gameItem);
     return inventory; 
 }
+
+export { equip }
