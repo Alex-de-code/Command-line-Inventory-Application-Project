@@ -52,16 +52,19 @@ function unequip(playerInventory, itemId) {
 function swap(playerInventory, itemId, updatedInventoryItem) {
   const itemToSwap = playerInventory.findIndex((item) => item.id === itemId);
   const matchingItem = merchantInventory.find(object => object.name === updatedInventoryItem);
-  if (itemToSwap > -1) {
+  if (itemToSwap > -1 && matchingItem) {
     playerInventory[itemToSwap].id = itemId;
     playerInventory[itemToSwap].name = updatedInventoryItem;
     playerInventory[itemToSwap].credits = matchingItem.credits;
     log(chalk.green('Item swap successfull.'));
     return playerInventory;
-  } else {
-      log(chalk.red('Item not found in cyber deck. Unable to swap items.'));
+    } else if (itemToSwap === -1) {
+      log(chalk.red('Item not found in your inventory. Check item id and enter a correct one. Swap failed.'));
       return playerInventory;
-  }
+    } else {
+      log(chalk.red(`Item not found in the merchant's inventory. Check new item name and enter a correct one. Swap failed.`));
+      return playerInventory;   
+    }
 }
 
  
