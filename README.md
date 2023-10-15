@@ -1,5 +1,16 @@
 # Command-line-Inventory-Application-Project
 
+--> Will properly format README.md once app functionality is completed built out 
+
+"index" ==> "inventory"
+"create" ==> "equip"
+"show" ==> "study"
+"destroy" ==> "unequip"
+"update" ==> "swap
+
+still need to create an "empty" cart action, along with marketplace transaction system and properly format intro for class selection, while finalizing player stat interactions with item stats when equipped, also need to create a "show stats" action that allows player to see their stats in real time
+
+
 Project Research/Citations: 
 
 
