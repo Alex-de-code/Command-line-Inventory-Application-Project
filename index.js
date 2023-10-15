@@ -1,9 +1,9 @@
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 //because of the use of ECMAScript Modules (ES modules) and how Node.js handles the import of JSON files, have to use assertion to specify the "type" for the imported module
-// import classStats from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/classStats.json' assert { type: 'json' };
+//import classStats from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/classStats.json' assert { type: 'json' };
 import { readJSONFile, writeJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
-import { merchantInventory, inventory, equip, } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
+import { merchantInventory, inventory, equip, study } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
 
 const ClassStats = readJSONFile('./data', 'ClassStats.JSON');
 const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
@@ -23,10 +23,10 @@ const log = console.log;
 function run() {
     const action = process.argv[2];
     const item = process.argv[3];
-    let errorMessage = "";
     let writeToFile = false;
     let updatedPlayerInventory = [];
     const foundItem = merchantInventory.find(item => item.name === process.argv[3]);
+    const foundId = playerInventory.find(item => item.id === process.argv[3]);
 
     switch (action) {
         case "inventory":
@@ -38,9 +38,18 @@ function run() {
                 updatedPlayerInventory = equip(playerInventory, item);
                 writeToFile = true;
             } else {
-                log("Item not found. This merchant doesn't sell what you're trying to buy.")
+                log(chalk.red("Item not found. This merchant doesn't sell what you're trying to buy."))
+            } 
+            break;
+        case "study":
+            if(foundId) {
+                const itemView = study(playerInventory, item);
+                log(itemView);
+            } else {
+                log(chalk.red("You must enter a proper item id to access full specs. Please re-enter id."))
             }
             break; 
+        
     // add remaining player actions below this line  
         default: 
             log('There was an error. Please fix Cyber Deck.');

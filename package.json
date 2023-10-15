@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "inventory":"node index.js inventory",
-    "equip": "node index.js equip"
+    "equip": "node index.js equip",
+    "study": "node index.js study"
   },
   "keywords": [
     "terminal",
