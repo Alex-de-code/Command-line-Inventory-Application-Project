@@ -3,6 +3,7 @@ import _ from 'lodash';
 import chalk from 'chalk';
 // import merchantInventory from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/merchantInventory.json' assert { type: 'json'}
 import { readJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
+const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
 const merchantInventory = readJSONFile('./data', 'merchantInventory.JSON'); 
 const log = console.log;
 //need to update this so it subtracts from player credits
@@ -34,6 +35,19 @@ function study(items, itemId) {
     if (matchingItem) {
       return `Name: ${item.name} \nItem ID: ${item.id} \nCredits: ${item.credits} \nDescription: ${matchingItem.description} \nStats: ${fullStats}`
     } 
-}; 
+}
+
+function unequip(playerInventory, itemId) {
+  const index = playerInventory.findIndex((item) => item.id === itemId);
+    if (index > -1) {
+      playerInventory.splice(index, 1);
+      log(chalk.green('Item successfully removed from cyber deck.'));
+      return playerInventory;
+    } else {
+        log(chalk.red('Item not found. No action taken.'));
+        return playerInventory;
+    }
+}
+ 
   
-export { merchantInventory, inventory, equip, study }
+export { merchantInventory, inventory, equip, study, unequip }
