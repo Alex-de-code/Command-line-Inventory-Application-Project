@@ -41,7 +41,7 @@ function unequip(playerInventory, itemId) {
   const index = playerInventory.findIndex((item) => item.id === itemId);
     if (index > -1) {
       playerInventory.splice(index, 1);
-      log(chalk.green('Item successfully removed from cyber deck.'));
+      log(chalk.green('Item successfully removed from Cyber Deck.'));
       return playerInventory;
     } else {
         log(chalk.red('Item not found. No action taken.'));
@@ -59,7 +59,7 @@ function swap(playerInventory, itemId, updatedInventoryItem) {
     log(chalk.green('Item swap successfull.'));
     return playerInventory;
     } else if (itemToSwap === -1) {
-      log(chalk.red('Item not found in your inventory. Check item id and enter a correct one.'));
+      log(chalk.red('Item not found in your Cyber Deck. Check item id and enter a correct one.'));
       return playerInventory;
     } else {
       log(chalk.red(`Item not found in the merchant's inventory. Check new item name and whether or not item is in stock.`));
@@ -67,5 +67,11 @@ function swap(playerInventory, itemId, updatedInventoryItem) {
     }
 }
 
+function wipe(playerInventory) {
+  const emptiedPlayerInventory = [];
+  playerInventory = emptiedPlayerInventory;
+  return playerInventory;  
+}
+
  
-export { merchantInventory, inventory, equip, study, unequip, swap }
+export { merchantInventory, inventory, equip, study, unequip, swap, wipe }

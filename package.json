@@ -9,7 +9,8 @@
     "equip": "node index.js equip",
     "study": "node index.js study",
     "unequip": "node index.js unequip",
-    "swap": "node index.js swap"
+    "swap": "node index.js swap",
+    "wipe": "node index.js wipe"
   },
   "keywords": [
     "terminal",
