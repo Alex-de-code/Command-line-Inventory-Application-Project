@@ -3,7 +3,7 @@ import chalkAnimation from 'chalk-animation';
 //because of the use of ECMAScript Modules (ES modules) and how Node.js handles the import of JSON files, have to use assertion to specify the "type" for the imported module
 //import classStats from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/classStats.json' assert { type: 'json' };
 import { readJSONFile, writeJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
-import { merchantInventory, inventory, equip, study, unequip } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
+import { merchantInventory, inventory, equip, study, unequip, swap } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
 
 const ClassStats = readJSONFile('./data', 'ClassStats.JSON');
 const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
@@ -53,7 +53,10 @@ function run() {
             updatedPlayerInventory = unequip(playerInventory, item);
             writeToFile = true;
             break;
-        
+        case "swap":
+            updatedPlayerInventory = swap(playerInventory, item, process.argv[4]);
+            writeToFile = true;
+            break;
     // add remaining player actions below this line  
         default: 
             log('There was an error. Please fix Cyber Deck.');
