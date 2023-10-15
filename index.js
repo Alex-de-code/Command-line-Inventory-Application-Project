@@ -34,9 +34,12 @@ function run() {
             log(itemsView);
             break;
         case "equip":
-            if(foundItem) {
+            if(foundItem && foundItem.inStock === true) {
                 updatedPlayerInventory = equip(playerInventory, item);
                 writeToFile = true;
+                log(chalk.green(`Successfully equipped ${foundItem.name}.`))
+            } else if (foundItem.inStock === false) {
+                log(chalk.red("Item is not in stock. Must return to this merchant at a later date."))
             } else {
                 log(chalk.red("Item not found. This merchant doesn't sell what you're trying to buy."))
             } 

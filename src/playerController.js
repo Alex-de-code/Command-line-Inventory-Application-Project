@@ -14,12 +14,12 @@ function inventory(items) {
 
 function equip(items, itemName) { 
   const foundItem = merchantInventory.find(item => item.name === itemName);
-  if (foundItem) {
+  if (foundItem && foundItem.inStock === true) {
     const item = {
       name: itemName, 
       id: nanoid(5),
       credits: foundItem.credits
-    };
+    }; 
     items.push(item);
     return items; 
   } 
@@ -52,21 +52,20 @@ function unequip(playerInventory, itemId) {
 function swap(playerInventory, itemId, updatedInventoryItem) {
   const itemToSwap = playerInventory.findIndex((item) => item.id === itemId);
   const matchingItem = merchantInventory.find(object => object.name === updatedInventoryItem);
-  if (itemToSwap > -1 && matchingItem) {
+  if (itemToSwap > -1 && matchingItem && matchingItem.inStock === true) {
     playerInventory[itemToSwap].id = itemId;
     playerInventory[itemToSwap].name = updatedInventoryItem;
     playerInventory[itemToSwap].credits = matchingItem.credits;
     log(chalk.green('Item swap successfull.'));
     return playerInventory;
     } else if (itemToSwap === -1) {
-      log(chalk.red('Item not found in your inventory. Check item id and enter a correct one. Swap failed.'));
+      log(chalk.red('Item not found in your inventory. Check item id and enter a correct one.'));
       return playerInventory;
     } else {
-      log(chalk.red(`Item not found in the merchant's inventory. Check new item name and enter a correct one. Swap failed.`));
+      log(chalk.red(`Item not found in the merchant's inventory. Check new item name and whether or not item is in stock.`));
       return playerInventory;   
     }
 }
 
  
-  
 export { merchantInventory, inventory, equip, study, unequip, swap }

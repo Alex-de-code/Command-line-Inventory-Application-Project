@@ -12,7 +12,8 @@
         "luck": 1 
       },
       "description": "The Neural Amplifier is a cutting-edge implant that enhances cognitive abilities. Originally developed for Technomancers, it boosts hacking skills and grants a slight increase in luck, making it a prized possession in the digital battlegrounds.",
-      "credits": 3500
+      "credits": 3500,
+      "unlocked": true
     },
     {
       "name": "Nano-Enhanced Blade",
@@ -27,7 +28,8 @@
         "luck": 0
       },
       "description": "The Nano-Enhanced Blade is a lethal close-quarters weapon favored by Cyber Ronin. It augments strength and agility, granting an edge in combat. However, it hinders hacking skills and offers a limited boost in understanding unconventional tech.",
-      "credits": 4200
+      "credits": 4200,
+      "inStock": true
     },
     {
       "name": "Holographic Cloak",
@@ -42,7 +44,8 @@
         "luck": 0
       },
       "description": "The Holographic Cloak is a state-of-the-art device that grants enhanced stealth and the ability to project convincing holographic disguises. It increases agility, intelligence, charisma, and hacking skills, ideal for Neon Sleuths navigating the urban sprawl.",
-      "credits": 5400
+      "credits": 5400,
+      "inStock": true
     },
     {
       "name": "Void Prism Amulet",
@@ -57,7 +60,8 @@
         "luck": 0
       },
       "description": "The Void Prism Amulet is a mysterious artifact with Lovecraftian origins. It enhances intelligence and charisma, granting deep insights into arcane and unconventional technology. Worn by those who seek forbidden knowledge.",
-      "credits": 6200
+      "credits": 6200,
+      "inStock": false
     },
     {
       "name": "Cybernetic Fist Augment",
@@ -72,7 +76,8 @@
         "luck": 0
       },
       "description": "The Cybernetic Fist Augment is a powerful, but brutish enhancement. It increases strength significantly while decreasing agility and charisma. It's favored by Cyber Brutes who prefer raw physical power over subtlety.",
-      "credits": 4700
+      "credits": 4700,
+      "inStock": true
     },
     {
         "name": "Rubber Chicken",
@@ -87,7 +92,8 @@
           "luck": 0
         },
         "description": "The Rubber Chicken is a strange and utterly useless item in the cyber world. Its presence confuses both friends and foes, but it serves no practical purpose in your adventures.",
-        "credits": 50
+        "credits": 50,
+        "inStock": true
     },
     {
       "name": "Cursed Data Chip",
@@ -102,7 +108,8 @@
         "luck": -3
       },
       "description": "The Cursed Data Chip is a malevolent piece of otherworldly tech. It drains intelligence, charisma, and hacking skills while bringing bad luck. Those who wield it are cursed, their minds and abilities weakened by its dark influence.",
-      "credits": 3800
+      "credits": 3800,
+      "inStock": true
     },
     {
       "name": "Plasma Blade",
@@ -117,7 +124,8 @@
         "luck": 1 
       },
       "description": "The Plasma Blade is a high-tech weapon favored by Tech Ninjas. It enhances strength and agility while offering some knowledge of cybernetics. However, it slightly reduces hacking skills.",
-      "credits": 3600
+      "credits": 3600,
+      "inStock": true
     },
     {
       "name": "Chameleon Skin Suit",
@@ -132,7 +140,8 @@
         "luck": 2 
       },
       "description": "The Chameleon Skin Suit is a versatile outfit for Rogue Runners. It grants enhanced agility, intelligence, charisma, and luck, making it perfect for navigating the cyber jungle undetected.",
-      "credits": 7900
+      "credits": 7900,
+      "inStock": true
     },
     {
       "name": "Tesla Gauntlets",
@@ -147,7 +156,8 @@
         "luck": 0
       },
       "description": "The Tesla Gauntlets are high-voltage cyber weapons used by Cyber Ronin. They enhance strength and agility but decrease intelligence and charisma. Some knowledge of cybernetics is required to wield them effectively.",
-      "credits": 6700
+      "credits": 6700,
+      "inStock": true
     },
     {
       "name": "Spectral Goggles",
@@ -162,7 +172,8 @@
         "luck": 1 
       },
       "description": "The Spectral Goggles are advanced optical gear used by Neon Sleuths. They boost intelligence and hacking skills while offering some knowledge of cybernetics and unconventional tech. Perfect for uncovering hidden secrets in the urban labyrinth.",
-      "credits": 8900
+      "credits": 8900,
+      "inStock": false
     },
     {
       "name": "Quantum Encryption Module",
@@ -177,7 +188,8 @@
         "luck": 0
       },
       "description": "The Quantum Encryption Module is the ultimate hacking tool for Technomancers. It enhances intelligence, charisma, and hacking skills to the maximum level. With this module, even the most fortified systems are within reach.",
-      "credits": 9500
+      "credits": 9500,
+      "inStock": false
     },
     {
       "name": "Quantum Encryption Module",
@@ -192,7 +204,8 @@
         "luck": 0
       },
       "description": "The Quantum Encryption Module is the ultimate hacking tool for Technomancers. It enhances intelligence, charisma, and hacking skills to the maximum level. With this module, even the most fortified systems are within reach.",
-      "credits": 8800
+      "credits": 8800,
+      "inStock": false
     },
     {
       "name": "Astral Implant",
@@ -207,7 +220,8 @@
         "luck": 2 
       },
       "description": "The Astral Implant is a mysterious device that links the user to eldritch realms. It enhances intelligence, charisma, hacking skills, and offers deep insights into unconventional tech. Users report experiencing strange visions and unsettling dreams.",
-      "credits": 7800
+      "credits": 7800,
+      "inStock": false
     },
     {
         "name": "Singing Fish Trophy",
@@ -222,7 +236,8 @@
           "luck": 0
         },
         "description": "The Singing Fish Trophy is a bizarre relic from a forgotten era. When activated, it sings catchy tunes, but it won't help you in your cyber adventures.",
-        "credits": 30
+        "credits": 30,
+        "inStock": true
     },
     {
       "name": "Temporal Disruptor",
@@ -237,7 +252,8 @@
         "luck": 1 
       },
       "description": "The Temporal Disruptor is a device of unknown origin that can manipulate time itself. It enhances intelligence, hacking skills, and cybernetics expertise. Some users have reported brief, unsettling glimpses into alternate timelines.",
-      "credits": 9300
+      "credits": 9300,
+      "inStock": false
     },
     {
       "name": "Nanite Infusion Serum",
@@ -252,7 +268,8 @@
         "luck": 1 
       },
       "description": "The Nanite Infusion Serum is a marvel of modern science, enhancing all aspects of the user's abilities. It boosts strength, agility, intelligence, charisma, hacking skills, cybernetics expertise, arcane knowledge, and luck. It's highly sought after, but its origins are shrouded in secrecy.",
-      "credits": 8500
+      "credits": 8500,
+      "inStock": false
     },
     {
         "name": "Dancing Robot Toy",
@@ -267,7 +284,8 @@
           "luck": 0
         },
         "description": "The Dancing Robot Toy is a miniature mechanical marvel that can perform intricate dance moves. While it's entertaining, it won't provide any benefits in your quest through the dystopian cyber world.",
-        "credits": 40
+        "credits": 40,
+        "inStock": true 
     },
     {
       "name": "Reality Warper Gauntlets",
@@ -282,7 +300,8 @@
         "luck": 2 
       },
       "description": "The Reality Warper Gauntlets are a rare artifact that grants the user god-like powers. They boost all attributes to superhuman levels. Those who possess these gauntlets can reshape the world to their liking. The origins of this artifact are a mystery, and some believe they hold the key to the universe.",
-      "credits": 10000
+      "credits": 10000,
+      "inStock": false
     }
   ]
    
