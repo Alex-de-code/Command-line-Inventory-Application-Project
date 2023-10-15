@@ -29,7 +29,7 @@ function study(items, itemId) {
     const item = items.find((item) => item.id === itemId);
     const matchingItem = merchantInventory.find(object => object.name === item.name);
     const statNames = Object.keys(matchingItem.stats);
-    const statNums = Object.values(matchingItem.stats);
+    const statNums = Object.values(matchingItem.stats); 
     const fullStats = statNames.map((i, j) => " " + i + " = " + chalk.blue(statNums[j])); 
 
     if (matchingItem) {

@@ -31,7 +31,11 @@ function run() {
     switch (action) {
         case "inventory":
             const itemsView = inventory(playerInventory);
+            if (itemsView) {
             log(itemsView);
+            } else {
+                log(chalk.red("There is nothing equipped. Look elsewhere."))
+            }
             break;
         case "equip":
             if(foundItem && foundItem.inStock === true) {
@@ -61,9 +65,13 @@ function run() {
             writeToFile = true;
             break;
         case "wipe":
-            updatedPlayerInventory = wipe(playerInventory);
-            writeToFile = true;
-            log(chalk.yellow("Cyber deck has been fully wiped. Proceed with caution."))
+            if(playerInventory.length > 0) {
+                updatedPlayerInventory = wipe(playerInventory);
+                writeToFile = true;
+                log(chalk.yellow("Cyber Deck has been fully wiped. Proceed with caution."))
+            } else {
+                log(chalk.red("Cyber Deck is already empty. No need to wipe."))
+            }
             break; 
     // add remaining player actions below this line  
         default: 
