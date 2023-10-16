@@ -130,5 +130,13 @@ function wallet(playerInventory) {
 function classes(classStats) {
   return classStats
 }
+
+function become(className) {
+  
+  if(foundClass) {const foundClass = classStats.find(classObject => classObject.name === className);
+    const playerClass = foundClass;
+    return playerClass; 
+  }  
+}
  
-export { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet, classes }
+export { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet, classes, become }

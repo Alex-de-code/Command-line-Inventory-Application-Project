@@ -13,7 +13,8 @@
     "swap": "node index.js swap",
     "wipe": "node index.js wipe",
     "wallet": "node index.js wallet",
-    "classes": "node index.js classes"
+    "classes": "node index.js classes",
+    "become": "node index.js become"
   },
   "keywords": [
     "terminal",

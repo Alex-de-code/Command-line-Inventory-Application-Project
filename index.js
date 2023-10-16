@@ -7,9 +7,9 @@ import inquirer from 'inquirer';
 //because of the use of ECMAScript Modules (ES modules) and how Node.js handles the import of JSON files, have to use assertion to specify the "type" for the imported module
 //import classStats from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/classStats.json' assert { type: 'json' };
 import { readJSONFile, writeJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
-import { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet, classes } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
+import { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet, classes, become } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
 
-const ClassStats = readJSONFile('./data', 'ClassStats.JSON');
+const classStats = readJSONFile('./data', 'ClassStats.JSON');
 const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
 const log = console.log; 
 let playerName;
@@ -31,8 +31,10 @@ function run() {
     const item = process.argv[3];
     let writeToFile = false;
     let updatedPlayerInventory = [];
+    let playerClass = []; 
     const foundItem = merchantInventory.find(item => item.name === process.argv[3]);
     const foundId = playerInventory.find(item => item.id === process.argv[3]);
+    const foundClass = classStats.find(classObject => classObject.name === process.argv[3]);
     let playerCredits = 7000;
 
     switch (action) {
@@ -94,6 +96,13 @@ function run() {
         case "classes": 
             log(classes(ClassStats)); 
             break; 
+        case "become": 
+            if (foundClass) {
+                log(`You've chosen\n`);
+                log(foundClass);  
+                log(`\n`)
+            }
+
     // add remaining player actions below this line  
         // default: 
         //     log(`\nThere was an error. Please fix Cydex.\n`);
