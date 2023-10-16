@@ -12,7 +12,8 @@
     "unequip": "node index.js unequip",
     "swap": "node index.js swap",
     "wipe": "node index.js wipe",
-    "wallet": "node index.js wallet"
+    "wallet": "node index.js wallet",
+    "classes": "node index.js classes"
   },
   "keywords": [
     "terminal",

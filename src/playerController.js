@@ -51,7 +51,9 @@ log(`
   the study command. To run this command the player will call "npm run study" 
   followed by a space and the unique id of that item in player inventory. 
   And if at any point the player wants to fully reset their Cydex and unequip 
-  all items they can run the wipe command which is "npm run wipe".`)}
+  all items they can run the wipe command which is "npm run wipe". All items 
+  have stats that interact with the stats of each class. To see the currently
+  available classes run "npm run classes" and the classes list will log.`)}
   `)}; 
   markWelcomeAsRun();
 }
@@ -124,5 +126,9 @@ function wipe(playerInventory) {
 function wallet(playerInventory) {
   return playerInventory.reduce((acc, current) => acc + current.credits, 0)
 }
+
+function classes(classStats) {
+  return classStats
+}
  
-export { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet }
+export { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet, classes }

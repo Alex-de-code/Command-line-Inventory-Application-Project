@@ -7,7 +7,7 @@ import inquirer from 'inquirer';
 //because of the use of ECMAScript Modules (ES modules) and how Node.js handles the import of JSON files, have to use assertion to specify the "type" for the imported module
 //import classStats from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/classStats.json' assert { type: 'json' };
 import { readJSONFile, writeJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
-import { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
+import { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet, classes } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
 
 const ClassStats = readJSONFile('./data', 'ClassStats.JSON');
 const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
@@ -15,7 +15,7 @@ const log = console.log;
 let playerName;
 
 // //commented out fancy terminal formatting to focus on logic
-// chalkAnimation.glitch((`Who said we're disconnected?`));
+chalkAnimation.glitch((`Who said we're disconnected?`));
 
 // setTimeout(() => {
 //     chalkAnimation.karaoke(`Connecting...`);
@@ -90,6 +90,9 @@ function run() {
             break; 
         case "wallet":
             log(chalk.blue(`\nCredits left: ${(playerCredits - wallet(playerInventory))}\n`))
+            break; 
+        case "classes": 
+            log(classes(ClassStats)); 
             break; 
     // add remaining player actions below this line  
         // default: 
