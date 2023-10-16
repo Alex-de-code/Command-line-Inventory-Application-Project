@@ -14,7 +14,8 @@
     "wipe": "node index.js wipe",
     "wallet": "node index.js wallet",
     "classes": "node index.js classes",
-    "become": "node index.js become"
+    "become": "node index.js become",
+    "lore": "node index.js lore"
   },
   "keywords": [
     "terminal",
@@ -24,11 +25,9 @@
   "author": "Alexander Gonzalez",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.2",
     "chalk-animation": "^2.0.3",
     "figlet": "^1.6.0",
     "gradient": "^0.2.0",
-    "inquirer": "^9.2.11",
     "nanoid": "^3.3.6"
   }
 }

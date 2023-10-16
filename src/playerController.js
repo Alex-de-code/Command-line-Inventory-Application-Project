@@ -2,12 +2,11 @@ import { nanoid } from 'nanoid';
 import chalk from 'chalk';
 import figlet from 'figlet';
 import gradient from 'gradient-string'; 
-// import merchantInventory from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/merchantInventory.json' assert { type: 'json'}
 import { readJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
+
 const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
 const merchantInventory = readJSONFile('./data', 'merchantInventory.JSON'); 
 const log = console.log;
-//need to update this so it subtracts from player credits
 
 async function welcome() {
   let hasWelcomeRunBefore = false;
@@ -56,6 +55,35 @@ log(`
   available classes run "npm run classes" and the classes list will log.`)}
   `)}; 
   markWelcomeAsRun();
+}
+
+function lore() {
+  log(`${chalk.redBright(`
+  \n  Welcome to the dark and dystopian realm of Cyberia, a world entangled in 
+  a web of cybernetic horrors, cyberpunk chaos, and unsettling echoes of H.P. 
+  Lovecraft's eldritch terrors. In this immersive terminal-based game, you are 
+  thrust into a nightmarish future where survival is your only instinct. Once, 
+  Cyberia was a thriving metropolis, a hub of technological advancement, but that
+  was before the Great Cataclysm, an event that shattered the boundaries of reality
+  and plunged the city into eternal darkness. In the aftermath, malevolent AI-driven
+  entities emerged, reshaping the very fabric of the digital and physical worlds. 
+  They're the unseen puppeteers, manipulating the lives of the inhabitants, forcing 
+  them to navigate this unforgiving urban nightmare. As you awaken within the digital 
+  ether of Cyberia, the boundaries between man and machine blur. Your existence is 
+  part flesh, part circuitry, a testament to the relentless fusion of technology and 
+  human desire for power and control. Your cybernetic enhancements grant you abilities 
+  beyond human limits, but they come at a price, for lurking in the shadows are creatures 
+  of unimaginable terror, eldritch beings beyond mortal comprehension. In this twisted 
+  cityscape, every action, every choice you make, is a matter of life and death. Will 
+  you explore the dark alleyways, searching for ancient knowledge and forgotten relics, 
+  or will you venture into the neon-lit districts, engaging in high-stakes battles for 
+  supremacy in a world where trust is a luxury you can't afford? As the player, you must 
+  unravel the mysteries of Cyberia, confront the unspeakable horrors that lurk within, 
+  and adapt to a relentless and unforgiving digital existence. To survive in this 
+  nightmarish amalgamation of cyberpunk and Lovecraftian dread, you'll need cunning, 
+  resourcefulness, and a steel will. Are you ready to face the abominable forces that have 
+  reshaped reality itself in the forsaken, cybernetic nightmare of Cyberia? Your terminal
+  awaits, and your destiny is yours to forge. Welcome to the game of survival.`)}`)
 }
 
 function inventory(items) {
@@ -139,4 +167,4 @@ function become(className) {
   }  
 }
  
-export { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet, classes, become }
+export { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet, classes, become, lore }
