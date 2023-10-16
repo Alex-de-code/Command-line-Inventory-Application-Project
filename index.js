@@ -33,9 +33,9 @@ function run() {
         case "inventory":
             const itemsView = inventory(playerInventory);
             if (itemsView) {
-            log(itemsView);
+            log(`\n${itemsView}\n`);
             } else {
-                log(chalk.red("There is nothing equipped. Look elsewhere."))
+                log(chalk.red(`\nThere is nothing equipped. Look elsewhere.\n`))
             }
             break;
         case "equip":
@@ -45,13 +45,13 @@ function run() {
             if(foundItem && foundItem.inStock === true && canEquip) {
                 updatedPlayerInventory = equip(playerInventory, item);
                 writeToFile = true;
-                log(chalk.green(`Successfully equipped ${foundItem.name}.`))
+                log(chalk.green(`\nSuccessfully equipped ${foundItem.name}.\n`))
             } else if (foundItem.inStock === false) {
-                log(chalk.red("Item is not in stock. Must return to this merchant at a later date."))
+                log(chalk.red(`\nItem is not in stock. Must return to this merchant at a later date.\n`))
             } else if (!canEquip && foundItem) {
-                log(chalk.red("Not enough credits. Must go on a mission to earn more."))
+                log(chalk.red(`n\Not enough credits. Must go on a mission to earn more.\n`))
             } else {
-                log(chalk.red("Item not found. This merchant doesn't sell what you're trying to buy."))
+                log(chalk.red(`\nItem not found. This merchant doesn't sell what you're trying to buy.\n`))
             } 
             break;
         case "study":
@@ -59,7 +59,7 @@ function run() {
                 const itemView = study(playerInventory, item);
                 log(itemView);
             } else {
-                log(chalk.red("You must enter a proper item id to access full specs. Please re-enter id."))
+                log(chalk.red(`\nYou must enter a proper item id to access full specs. Please re-enter id.\n`))
             }
             break; 
         case "unequip":
@@ -74,17 +74,17 @@ function run() {
             if(playerInventory.length > 0) {
                 updatedPlayerInventory = wipe(playerInventory);
                 writeToFile = true;
-                log(chalk.yellow("Cydex has been fully wiped. Proceed with caution."))
+                log(chalk.yellow(`\nCydex has been fully wiped. Proceed with caution.\n`))
             } else {
-                log(chalk.red("Cydex is already empty. No need to wipe."))
+                log(chalk.red(`\nCydex is already empty. No need to wipe.\n`))
             }
             break; 
         case "wallet":
-            log(chalk.blue("Credits left: " + (playerCredits - wallet(playerInventory))))
+            log(chalk.blue(`\nCredits left: ${(playerCredits - wallet(playerInventory))}\n`))
             break; 
     // add remaining player actions below this line  
         default: 
-            log('There was an error. Please fix Cydex.');
+            log(`\nThere was an error. Please fix Cydex.\n`);
     }
 
     if (writeToFile) {
