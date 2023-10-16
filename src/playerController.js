@@ -1,12 +1,60 @@
 import { nanoid } from 'nanoid';
-import _ from 'lodash'; 
 import chalk from 'chalk';
+import figlet from 'figlet';
+import gradient from 'gradient-string'; 
 // import merchantInventory from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/merchantInventory.json' assert { type: 'json'}
 import { readJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
 const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
 const merchantInventory = readJSONFile('./data', 'merchantInventory.JSON'); 
 const log = console.log;
 //need to update this so it subtracts from player credits
+
+async function welcome() {
+  let hasWelcomeRunBefore = false;
+
+  function hasWelcomeRun() {
+      return hasWelcomeRunBefore;
+  }
+
+  function markWelcomeAsRun() {
+      hasWelcomeRunBefore = true;
+  }
+  if (!hasWelcomeRun()) {
+  const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
+  const titleSplash = figlet(`Cyberia`, (err, data) => {
+  log(gradient.pastel.multiline(data) + '\n')
+});
+
+await sleep();
+//   loading.stop();
+
+log(`
+  ${chalk.bgYellowBright('HOW TO PLAY')} ${chalk.green(`
+  \n  The world of Cyberia takes place entirely in the terminal. Leverage 
+  the power of your arsenal and abilities by commanding your Cydex with 
+  Node.JS commands. To equip an item from the merchant store, you will run 
+  "npm run equip" followed by a space and the name of the item within 
+  quotations. Equipping items in the BETA will also purchase them and player 
+  credits will therefore start to deplete. To check leftover credits run 
+  the command "npm run wallet" which will reveal the total credits left 
+  after all purchases. To see all equipped items run "npm run inventory" and 
+  a list of all purchased items along with a unique id will log to console. 
+  These ids are needed for unequipping,swapping, and studying items in the 
+  player inventory. By unequipping an item a player is removing both that 
+  item and its unique id from the player inventory list and also reselling 
+  it back to the merchant so credits return to their initial point without 
+  that item. Unequip is done through command "npm run unequip" followed by a 
+  space and the unique item id. To swap one item for another the player must 
+  run "npm run swap" followed by a space and the unique item id of the first 
+  item followed by another space and the name of the new item in quotations. 
+  All items can be studied to see their full stats and descriptions through 
+  the study command. To run this command the player will call "npm run study" 
+  followed by a space and the unique id of that item in player inventory. 
+  And if at any point the player wants to fully reset their Cydex and unequip 
+  all items they can run the wipe command which is "npm run wipe".`)}
+  `)}; 
+  markWelcomeAsRun();
+}
 
 function inventory(items) {
   return items.map((item) => item.id + ' ' + item.name).join('\n');
@@ -77,4 +125,4 @@ function wallet(playerInventory) {
   return playerInventory.reduce((acc, current) => acc + current.credits, 0)
 }
  
-export { merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet }
+export { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet }

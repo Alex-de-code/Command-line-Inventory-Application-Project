@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "inventory":"node index.js inventory",
+    "start": "node index.js start",
+    "inventory": "node index.js inventory",
     "equip": "node index.js equip",
     "study": "node index.js study",
     "unequip": "node index.js unequip",
@@ -23,7 +24,9 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "chalk-animation": "^2.0.3",
-    "lodash": "^4.17.21",
+    "figlet": "^1.6.0",
+    "gradient": "^0.2.0",
+    "inquirer": "^9.2.11",
     "nanoid": "^3.3.6"
   }
 }

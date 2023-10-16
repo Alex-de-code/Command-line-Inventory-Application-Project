@@ -1,13 +1,18 @@
+#!/usr/bin/env node 
+
 import chalk from 'chalk';
-import chalkAnimation from 'chalk-animation';
+import chalkAnimation from 'chalk-animation'; 
+import inquirer from 'inquirer'; 
+
 //because of the use of ECMAScript Modules (ES modules) and how Node.js handles the import of JSON files, have to use assertion to specify the "type" for the imported module
 //import classStats from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/classStats.json' assert { type: 'json' };
 import { readJSONFile, writeJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
-import { merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
+import { welcome, merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
 
 const ClassStats = readJSONFile('./data', 'ClassStats.JSON');
 const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
 const log = console.log; 
+let playerName;
 
 // //commented out fancy terminal formatting to focus on logic
 // chalkAnimation.glitch((`Who said we're disconnected?`));
@@ -20,6 +25,7 @@ const log = console.log;
 //     console.log(chalk.greenBright(`Welcome to this demo for my inventory management system for "Cyber". Here you will be able to access a 'Merchant Shop', check 'Player Inventory', pick a 'class' and buy, sell, equip, and unequip items to change stats. Money is limited in the beta, so choose your buffs wisely. ${chalk.yellowBright("The rift is dangerous,")} ${chalk.redBright("try not to die...")}`));
 // }, 12000);
 
+
 function run() {
     const action = process.argv[2];
     const item = process.argv[3];
@@ -30,10 +36,13 @@ function run() {
     let playerCredits = 7000;
 
     switch (action) {
+        case "start":
+            welcome();
+            break; 
         case "inventory":
             const itemsView = inventory(playerInventory);
             if (itemsView) {
-            log(`\n${itemsView}\n`);
+            log(`\∆∆∆ CYDEX ∆∆∆\n-------------------------\n${itemsView}\n`);
             } else {
                 log(chalk.red(`\nThere is nothing equipped. Look elsewhere.\n`))
             }
@@ -83,8 +92,8 @@ function run() {
             log(chalk.blue(`\nCredits left: ${(playerCredits - wallet(playerInventory))}\n`))
             break; 
     // add remaining player actions below this line  
-        default: 
-            log(`\nThere was an error. Please fix Cydex.\n`);
+        // default: 
+        //     log(`\nThere was an error. Please fix Cydex.\n`);
     }
 
     if (writeToFile) {
@@ -93,6 +102,7 @@ function run() {
 
 };
 
-run()
+// console.clear();
+// await welcome();
 
-// log(classStats);
+run(); 
