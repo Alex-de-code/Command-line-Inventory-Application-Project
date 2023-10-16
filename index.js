@@ -3,7 +3,7 @@ import chalkAnimation from 'chalk-animation';
 //because of the use of ECMAScript Modules (ES modules) and how Node.js handles the import of JSON files, have to use assertion to specify the "type" for the imported module
 //import classStats from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/data/classStats.json' assert { type: 'json' };
 import { readJSONFile, writeJSONFile } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/helpers.js'
-import { merchantInventory, inventory, equip, study, unequip, swap, wipe } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
+import { merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet } from '/Users/alex/Documents/10.3-days/module-two/projects/Command-line-Inventory-Application-Project/src/playerController.js'
 
 const ClassStats = readJSONFile('./data', 'ClassStats.JSON');
 const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
@@ -27,6 +27,7 @@ function run() {
     let updatedPlayerInventory = [];
     const foundItem = merchantInventory.find(item => item.name === process.argv[3]);
     const foundId = playerInventory.find(item => item.id === process.argv[3]);
+    let playerCredits = 7000;
 
     switch (action) {
         case "inventory":
@@ -38,12 +39,17 @@ function run() {
             }
             break;
         case "equip":
-            if(foundItem && foundItem.inStock === true) {
+            const itemCost = foundItem.credits;
+            const canEquip = playerCredits - wallet(playerInventory) >= itemCost 
+
+            if(foundItem && foundItem.inStock === true && canEquip) {
                 updatedPlayerInventory = equip(playerInventory, item);
                 writeToFile = true;
                 log(chalk.green(`Successfully equipped ${foundItem.name}.`))
             } else if (foundItem.inStock === false) {
                 log(chalk.red("Item is not in stock. Must return to this merchant at a later date."))
+            } else if (!canEquip && foundItem) {
+                log(chalk.red("Not enough credits. Must go on a mission to earn more."))
             } else {
                 log(chalk.red("Item not found. This merchant doesn't sell what you're trying to buy."))
             } 
@@ -68,14 +74,17 @@ function run() {
             if(playerInventory.length > 0) {
                 updatedPlayerInventory = wipe(playerInventory);
                 writeToFile = true;
-                log(chalk.yellow("Cyber Deck has been fully wiped. Proceed with caution."))
+                log(chalk.yellow("Cydex has been fully wiped. Proceed with caution."))
             } else {
-                log(chalk.red("Cyber Deck is already empty. No need to wipe."))
+                log(chalk.red("Cydex is already empty. No need to wipe."))
             }
+            break; 
+        case "wallet":
+            log(chalk.blue("Credits left: " + (playerCredits - wallet(playerInventory))))
             break; 
     // add remaining player actions below this line  
         default: 
-            log('There was an error. Please fix Cyber Deck.');
+            log('There was an error. Please fix Cydex.');
     }
 
     if (writeToFile) {

@@ -40,8 +40,8 @@ function study(items, itemId) {
 function unequip(playerInventory, itemId) {
   const index = playerInventory.findIndex((item) => item.id === itemId);
     if (index > -1) {
+      log(chalk.green(`${playerInventory[index].name} successfully removed from Cydex.`));
       playerInventory.splice(index, 1);
-      log(chalk.green('Item successfully removed from Cyber Deck.'));
       return playerInventory;
     } else {
         log(chalk.red('Item not found. No action taken.'));
@@ -59,7 +59,7 @@ function swap(playerInventory, itemId, updatedInventoryItem) {
     log(chalk.green('Item swap successfull.'));
     return playerInventory;
     } else if (itemToSwap === -1) {
-      log(chalk.red('Item not found in your Cyber Deck. Check item id and enter a correct one.'));
+      log(chalk.red('Item not found in your Cydex. Check item id and enter a correct one.'));
       return playerInventory;
     } else {
       log(chalk.red(`Item not found in the merchant's inventory. Check new item name and whether or not item is in stock.`));
@@ -73,5 +73,8 @@ function wipe(playerInventory) {
   return playerInventory;  
 }
 
+function wallet(playerInventory) {
+  return playerInventory.reduce((acc, current) => acc + current.credits, 0)
+}
  
-export { merchantInventory, inventory, equip, study, unequip, swap, wipe }
+export { merchantInventory, inventory, equip, study, unequip, swap, wipe, wallet }
