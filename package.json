@@ -14,7 +14,7 @@
     "wipe": "node index.js wipe",
     "wallet": "node index.js wallet",
     "classes": "node index.js classes",
-    "become": "node index.js become",
+    "become": "node index.js become", 
     "lore": "node index.js lore"
   },
   "keywords": [

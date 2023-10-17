@@ -14,7 +14,7 @@
       "description": "The Neural Amplifier is a cutting-edge implant that enhances cognitive abilities. Originally developed for Technomancers, it boosts hacking skills and grants a slight increase in luck, making it a prized possession in the digital battlegrounds.",
       "credits": 3500,
       "unlocked": true
-    },
+    }, 
     {
       "name": "Nano-Enhanced Blade",
       "stats": {

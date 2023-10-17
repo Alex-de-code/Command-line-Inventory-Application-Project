@@ -52,7 +52,15 @@ log(`
   And if at any point the player wants to fully reset their Cydex and unequip 
   all items they can run the wipe command which is "npm run wipe". All items 
   have stats that interact with the stats of each class. To see the currently
-  available classes run "npm run classes" and the classes list will log.`)}
+  available classes run "npm run classes" and the classes list will log. To select
+  a class or inspect one in particular alone from the rest, run the command "npm
+  run become" followed by a space and the name of the class in quotations. At the
+  moment item stats have no in-game interaction with class stats. So there is no 
+  command that shows an update of player stats with items equipped to their inventory.
+  If at any point the player would like to read the lore of Cyberia run the command
+  "npm run lore" and the full lore text will log. Player's can only manage inventory 
+  in the world of Cyberia, but this may change in the future if further progress is 
+  made. Thanks for cloning!`)}
   `)}; 
   markWelcomeAsRun();
 }
@@ -83,11 +91,11 @@ function lore() {
   nightmarish amalgamation of cyberpunk and Lovecraftian dread, you'll need cunning, 
   resourcefulness, and a steel will. Are you ready to face the abominable forces that have 
   reshaped reality itself in the forsaken, cybernetic nightmare of Cyberia? Your terminal
-  awaits, and your destiny is yours to forge. Welcome to the game of survival.`)}`)
+  awaits, and your destiny is yours to forge. Welcome to the game of survival.`)}`) 
 }
 
 function inventory(items) {
-  return items.map((item) => item.id + ' ' + item.name).join('\n');
+  return items.map((item) => item.id + ' ' + item.name + ' ' + item.credits).join('\n');
 } 
 
 function equip(items, itemName) { 

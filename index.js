@@ -9,7 +9,6 @@ import { welcome, merchantInventory, inventory, equip, study, unequip, swap, wip
 const classStats = readJSONFile('./data', 'ClassStats.JSON');
 const playerInventory = readJSONFile('./data', 'playerInventory.JSON'); 
 const log = console.log; 
-let playerName;
 
 function run() {
     const action = process.argv[2];
