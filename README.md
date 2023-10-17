@@ -1,6 +1,10 @@
 # Cyberia-Inventory-Management-Application
 
 ![Cyberia](https://github.com/Alex-de-code/Command-line-Inventory-Application-Project/assets/140418415/520dec91-5acc-4118-a116-b29940e8e691) 
+
+
+
+
 ![cool gif](https://media4.giphy.com/media/MLAwEM9fmgaQ0/giphy.gif?cid=6104955ey8ykl0ts1qd75l8b5ulvy8c8uncxrbexpyupyhrq&ep=v1_gifs_translate&rid=giphy.gif&ct=g)
 
 
