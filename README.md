@@ -1,7 +1,7 @@
 # Cyberia-Inventory-Management-Application
 
 ![Cyberia](https://github.com/Alex-de-code/Command-line-Inventory-Application-Project/assets/140418415/520dec91-5acc-4118-a116-b29940e8e691) 
-![Cool gif](https://giphy.com/embed/YtCAXWS94FZbWiKmKH")
+![cool gif](https://media4.giphy.com/media/MLAwEM9fmgaQ0/giphy.gif?cid=6104955ey8ykl0ts1qd75l8b5ulvy8c8uncxrbexpyupyhrq&ep=v1_gifs_translate&rid=giphy.gif&ct=g)
 
 
 Welcome to Cyberia, a dystopian world where cybernetic horrors and Lovecraftian terrors have fused to reshape reality. In this terminal-based game, your cyber-enhanced existence is your only hope in navigating a city teeming with malevolent AI entities, where every choice is a matter of life and death. Can you unravel the dark mysteries, confront unspeakable horrors, and survive the relentless fusion of cyberpunk chaos and eldritch dread that defines Cyberia? Your fate is in your hands as you venture into this unforgiving digital realm. 
