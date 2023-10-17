@@ -1,5 +1,8 @@
 # Cyberia-Inventory-Management-Application
 
+![Screenshot 2023-10-16 at 10 39 30 PM](https://github.com/Alex-de-code/Command-line-Inventory-Application-Project/assets/140418415/6a441d78-201c-4788-976c-6e1c94564f0c)
+
+
 Welcome to Cyberia, a dystopian world where cybernetic horrors and Lovecraftian terrors have fused to reshape reality. In this terminal-based game, your cyber-enhanced existence is your only hope in navigating a city teeming with malevolent AI entities, where every choice is a matter of life and death. Can you unravel the dark mysteries, confront unspeakable horrors, and survive the relentless fusion of cyberpunk chaos and eldritch dread that defines Cyberia? Your fate is in your hands as you venture into this unforgiving digital realm. 
 
 The primary function of this application is interactable inventory management for the sake of developing a CRUD application. Features will be listed below.
